@@ -5,6 +5,8 @@ I build local-first AI infrastructure — systems that stay on your hardware, st
 Most of my time goes into multi-agent coordination. I run a private [OpenClaw](https://github.com/AgeOfAI-Builders/OpenClaw) setup where multiple LLM agents collaborate through a shared workspace, and I build the tooling around that.
 
 > **⚠️ sudo RSI** — I've been typing so much multi-agent orchestration code that my wrists filed a formal grievance. My carpal tunnels have carpal tunnels. The agents are starting to type for me, which is either the future of AI or a cry for help. Possibly both.
+>
+> Don't believe me? Here's [42KB of agents writing raw x86-64 assembly while I sat there](https://github.com/infektyd/council/blob/main/examples/transcripts/council_transcript_20260315_101059.md). My keyboard is filing for workers' comp.
 
 ### Agent Orchestration
 
