@@ -28,4 +28,4 @@ Most of my time goes into multi-agent coordination. I run a private [OpenClaw](h
 
 I favor explicit state, local-first design, and solutions that remain under your control. The goal is infrastructure that's useful regardless of which foundation model is underneath.
 
-Del Haven, NJ · [Hugging Face](https://huggingface.co/infektyd)
+Southern NJ · [Hugging Face](https://huggingface.co/infektyd)
