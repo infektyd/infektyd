@@ -1,31 +1,61 @@
 # Hans (infektyd)
 
-I build local-first AI infrastructure — systems that stay on your hardware, stay inspectable, and don't phone home to the cloud.
+![Location](https://img.shields.io/badge/Southern_NJ-USA-1f6feb?style=flat-square)
+![Focus](https://img.shields.io/badge/focus-local--first_AI_infra-7f5af0?style=flat-square)
+![Swift](https://img.shields.io/badge/Swift_6-F05138?style=flat-square&logo=swift&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white)
+![Apple](https://img.shields.io/badge/Apple_FoundationModels-000000?style=flat-square&logo=apple&logoColor=white)
 
-Most of my time goes into multi-agent coordination. I run a private [OpenClaw](https://github.com/AgeOfAI-Builders/OpenClaw) setup where multiple LLM agents collaborate through a shared workspace, and I build the tooling around that.
+I build **local-first AI infrastructure** — multi-agent systems that run on your hardware, stay inspectable, and don't depend on the cloud.
 
-> **⚠️ sudo RSI** — I've been typing so much multi-agent orchestration code that my wrists filed a formal grievance. My carpal tunnels have carpal tunnels. The agents are starting to type for me, which is either the future of AI or a cry for help. Possibly both.
->
-> Don't believe me? Here's [42KB of agents writing raw x86-64 assembly while I sat there](https://github.com/infektyd/council/blob/main/examples/transcripts/council_transcript_20260315_101059.md). My keyboard is filing for workers' comp.
+Currently building **Praxis**, an agent-first IDE for macOS, alongside the orchestration and memory tooling around a private [OpenClaw](https://github.com/AgeOfAI-Builders/OpenClaw) multi-agent setup.
 
-### Agent Orchestration
+[![GitHub](https://img.shields.io/badge/GitHub-infektyd-181717?style=flat-square&logo=github)](https://github.com/infektyd)
+[![Hugging Face](https://img.shields.io/badge/Hugging_Face-infektyd-FFD21E?style=flat-square&logo=huggingface&logoColor=black)](https://huggingface.co/infektyd)
 
-- **[Council](https://github.com/infektyd/council)** — Multi-agent orchestration skill for OpenClaw. Routes tasks to specialized Grok personas (Workhorse, Creative, Speed), runs parallel deliberation with model diversity, synthesizes verdicts, and produces auditable transcripts. Agents self-coordinate through minimal scaffolding — no rigid hierarchies. [Dataset on Hugging Face](https://huggingface.co/datasets/infektyd/council-transcripts).
-- **[Sovereign Memory](https://github.com/infektyd/sovereign-memory)** — Local-first memory infrastructure for agent swarms. The core opinion is still: **identity loads whole, knowledge loads chunked.** Agent identity files (`IDENTITY.md`, `SOUL.md`) hydrate as complete documents before retrieved knowledge enters context, so an agent's sense of self doesn't get shredded into RAG fragments. The public package is the portable core: SQLite/WAL, FTS5, FAISS, sentence-transformers embeddings, markdown-aware chunking, write-back learnings, episodic events, memory decay, and graph export. The newer work is the integration layer: an OpenClaw/Hermes bridge that lets running agents use Sovereign Memory through a local socket daemon, with optional Apple Foundation Models extraction/adapter infrastructure kept as local runtime plumbing rather than bundled repo data. No cloud dependency, no remote memory service, no mystery black box.
+## Selected Work
 
-### Native Apps & Frameworks
+### Praxis · *current focus*
+![macOS](https://img.shields.io/badge/macOS-000?style=flat-square&logo=apple) ![iOS](https://img.shields.io/badge/iOS-000?style=flat-square&logo=apple) ![Swift](https://img.shields.io/badge/Swift-F05138?style=flat-square&logo=swift&logoColor=white) ![Status](https://img.shields.io/badge/repo-private-lightgrey?style=flat-square)
 
-- **Praxis** *(current focus)* — Local-first, agent-first IDE prototype for macOS and iOS. Native SwiftUI shell treats agent activity as the primary workspace object. Resizable `PraxisSheet` zones (files, editor, agent chat, terminal, activity rail). Headless `praxisd` Swift daemon handles 7+ LLM providers (OpenAI, Anthropic, Gemini, Grok/xAI, etc.), 14 tools with authorization gate, activity persistence (JSONL), and JSON-RPC. Compose Multiplatform thin client option. 243+ daemon tests passing. Fits the local-first agent infrastructure vision perfectly.
-- **[llmHub](https://github.com/infektyd/llmHub)** — Native macOS/iOS AI agent platform. Swift 6 with strict concurrency, 8 LLM providers behind a shared protocol (OpenAI, Anthropic, Gemini, Grok, Mistral, OpenRouter, Apple Foundation Models, and OpenClaw for agent-routed requests). Brain/Hand/Loop architecture: Brain owns LLM inference, Hand owns 16 built-in tools + MCP bridge for runtime extension, Loop handles chat orchestration, context compaction, and multi-agent coordination. Agents are discovered dynamically from your OpenClaw gateway — `@mention` routing, concurrent streaming (up to 4 agents), per-agent session keys, and agent roster injection so each agent knows who else is in the conversation. Integrates Sovereign Memory for cross-session recall.
-- **[Syntra](https://github.com/infektyd/Syntra)** — My first programming project — a Swift cognitive architecture built on Apple FoundationModels. Three-brain system: Valon (moral/creative, 70%), Modi (analytical/logical, 30%), and Core (synthesis + drift monitoring). It's a consciousness research platform more than a chat framework — cognitive drift tracking, moral continuity enforcement, memory rehearsal, elastic weight consolidation. Vapor server, multi-provider LLM support, cross-platform (iOS/macOS/watchOS/visionOS). I learned Swift, concurrency, and agent architecture by building this.
-- **[Syntra-Testing](https://github.com/infektyd/Syntra-Testing)** — Python evaluation framework I built to test Syntra's reasoning and explain the system to myself and anyone else. GSM8K, ARC, and custom benchmarks with automated grading, concurrent evaluation runners, matplotlib visualizations, and PDF report generation. The act of building the test harness taught me more about what Syntra was actually doing than building Syntra did.
+Local-first, agent-first IDE. SwiftUI shell over a headless `praxisd` Swift daemon: 7+ LLM providers, 14 tools behind an authorization gate, JSON-RPC, 243+ tests passing. Optional Compose Multiplatform thin client.
 
-### Systems Programming
+### [Council](https://github.com/infektyd/council)
+![Agents](https://img.shields.io/badge/Agents-7f5af0?style=flat-square) ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white) ![Dataset](https://img.shields.io/badge/HF_Dataset-FFD21E?style=flat-square&logo=huggingface&logoColor=black)
 
-- **[Binary Forge](https://github.com/infektyd/Binary-Forge)** — Hand-forged x86-64 Linux binaries. No compiler, no libc — raw ELF, direct syscalls, machine code.
+Multi-agent orchestration skill for OpenClaw. Routes tasks to specialized model personas, runs parallel deliberation, produces auditable transcripts. [Public dataset on Hugging Face](https://huggingface.co/datasets/infektyd/council-transcripts).
+
+### [Sovereign Memory](https://github.com/infektyd/sovereign-memory)
+![Agents](https://img.shields.io/badge/Agents-7f5af0?style=flat-square) ![Infra](https://img.shields.io/badge/Infra-1f6feb?style=flat-square) ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white) ![FAISS](https://img.shields.io/badge/FAISS-0467DF?style=flat-square)
+
+Local-first memory for agent swarms. Core principle: *identity loads whole, knowledge loads chunked.* SQLite/WAL, FTS5, FAISS, sentence-transformers, markdown-aware chunking; OpenClaw bridge via a local socket daemon. No remote memory service.
+
+### [llmHub](https://github.com/infektyd/llmHub)
+![macOS](https://img.shields.io/badge/macOS-000?style=flat-square&logo=apple) ![iOS](https://img.shields.io/badge/iOS-000?style=flat-square&logo=apple) ![Swift](https://img.shields.io/badge/Swift_6-F05138?style=flat-square&logo=swift&logoColor=white) ![MCP](https://img.shields.io/badge/MCP-bridge-2ea44f?style=flat-square)
+
+Native AI agent platform. Swift 6 with strict concurrency, 8 LLM providers behind one protocol, Brain/Hand/Loop architecture, 16 built-in tools + MCP bridge, `@mention` routing with concurrent streaming up to 4 agents. Integrates Sovereign Memory.
+
+### [Syntra](https://github.com/infektyd/Syntra)
+![Swift](https://img.shields.io/badge/Swift-F05138?style=flat-square&logo=swift&logoColor=white) ![Apple](https://img.shields.io/badge/Apple_FoundationModels-000?style=flat-square&logo=apple) ![Research](https://img.shields.io/badge/Research-c084fc?style=flat-square)
+
+Cognitive-architecture research project on Apple FoundationModels. Three-brain system (Valon / Modi / Core) with drift tracking and elastic weight consolidation. Cross-platform across iOS/macOS/watchOS/visionOS, Vapor server, with a companion Python eval harness covering GSM8K and ARC.
+
+### [Binary Forge](https://github.com/infektyd/Binary-Forge)
+![Systems](https://img.shields.io/badge/Systems-0a0a0a?style=flat-square) ![x86_64](https://img.shields.io/badge/x86--64-blue?style=flat-square) ![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
+
+Hand-forged x86-64 Linux binaries. No compiler, no libc — raw ELF and direct syscalls.
+
+## Stats
+
+<a href="https://github.com/infektyd">
+  <img src="./github-metrics.svg" alt="GitHub metrics" />
+</a>
+
+## Tech
+
+Swift 6 (strict concurrency) · SwiftUI · Vapor · Python · Rust · x86-64 assembly · Apple FoundationModels · SQLite / FTS5 · FAISS · sentence-transformers · JSON-RPC · MCP · Compose Multiplatform
 
 ---
-
-I favor explicit state, local-first design, and solutions that remain under your control. The goal is infrastructure that's useful regardless of which foundation model is underneath.
 
 Southern NJ · [Hugging Face](https://huggingface.co/infektyd)
