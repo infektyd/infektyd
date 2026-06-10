@@ -1,5 +1,10 @@
 <div align="center">
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="ha_sigil-dark.svg">
+  <img src="ha_sigil-light.svg" height="56" alt="HA sigil">
+</picture>
+
 # Hans &nbsp;·&nbsp; `infektyd`
 
 ![focus](https://img.shields.io/badge/focus-local--first%20AI%20infra-1f6feb?style=for-the-badge)
@@ -79,9 +84,9 @@ A paired runtime + harness — Swift agent framework plus the Python eval framew
 
 | | |
 |--:|:--|
-| **Languages** | `Swift 6` &nbsp; `Python` &nbsp; `Rust` &nbsp; `x86-64 assembly` |
-| **Frameworks** | `SwiftUI` &nbsp; `Vapor` &nbsp; `Compose Multiplatform` |
-| **AI / Agents** | `Apple FoundationModels` &nbsp; `MCP` &nbsp; `JSON-RPC` |
+| **Languages** | `Swift 6` &nbsp; `TypeScript` &nbsp; `Python` |
+| **Frameworks** | `SwiftUI` &nbsp; `Node` |
+| **AI / Agents** | `Apple FoundationModels` &nbsp; `MCP` &nbsp; `JSON-RPC` &nbsp; `multi-agent CLIs (Claude Code · Codex · Gemini · Grok)` |
 | **Memory & Retrieval** | `SQLite / FTS5` &nbsp; `FAISS` &nbsp; `sentence-transformers` |
 
 </div>
