@@ -22,8 +22,10 @@ Multi-agent systems that run on your hardware, stay inspectable, and don't depen
 
 ## Now
 
-### 🧠 &nbsp; Minni
+### ᛗ &nbsp; Minni
 ![status](https://img.shields.io/badge/public-2ea44f?style=flat-square) ![focus](https://img.shields.io/badge/current%20focus-orange?style=flat-square) ![ver](https://img.shields.io/badge/evolving-1f6feb?style=flat-square)
+
+> ***Minni*** — Old Norse for *memory*; the *minni* was also the toast raised so the dead stayed remembered. It descends from PIE ***men-*** ("to mind"), the root behind *mind*, *mnemonic*, Greek *mnēmē*, Sanskrit *manas* — the proto-word for memory, put back to work. The rune is **Mannaz** (ᛗ), the mind rune, from the same family.
 
 *(formerly Sovereign Memory)* — local-first memory **and governance** for AI agents, evolving in the open.
 
