@@ -12,7 +12,7 @@ Multi-agent systems that run on your hardware, stay inspectable, and don't depen
 
 > *"Identity loads whole. Knowledge loads chunked."*
 
-**Currently:** shipping Sovereign Memory · building Praxis · iterating on llmHub
+**Currently:** evolving Minni · building Praxis · iterating on llmHub
 
 </div>
 
@@ -26,14 +26,16 @@ Multi-agent systems that run on your hardware, stay inspectable, and don't depen
 <tr>
 <td width="50%" valign="top">
 
-### 🧠 &nbsp; Sovereign Memory
-![status](https://img.shields.io/badge/public-2ea44f?style=flat-square) ![ver](https://img.shields.io/badge/v1-May%202026-1f6feb?style=flat-square)
+### 🧠 &nbsp; Minni
+![status](https://img.shields.io/badge/public-2ea44f?style=flat-square) ![ver](https://img.shields.io/badge/evolving-1f6feb?style=flat-square)
 
-Per-agent memory vaults. New writes are *proposed*, then resolved through an operator gate before becoming durable. Cross-agent handoffs carry identity, principal, and context.
+*(formerly Sovereign Memory)* — local-first memory **and governance** for AI agents. Per-agent vaults with review-first learning: writes are *proposed*, pass a quality gate and operator review, then become durable. Cross-agent handoffs carry identity, principal, and context; everything is audited.
+
+**Shipping now: `minni:plan`** — plans as durable artifacts, not session todo-lists. They survive crash and compaction, one agent's plan is executable by another (Claude writes, Codex runs, both observable), and steps close on an *evidence gate*: not "the agent said done," but the proof passed — test output, serial markers off real hardware.
 
 SQLite/WAL is runtime truth · FAISS handles vector recall · native Apple Foundation Models keeps it on-device · no remote service.
 
-[→ infektyd/sovereign-memory](https://github.com/infektyd/sovereign-memory)
+[→ infektyd/minni](https://github.com/infektyd/minni)
 
 </td>
 <td width="50%" valign="top">
@@ -55,7 +57,7 @@ Optional Compose Multiplatform thin client.
 ### 🧬 &nbsp; llmHub
 ![status](https://img.shields.io/badge/public-2ea44f?style=flat-square) ![lang](https://img.shields.io/badge/Swift%206-orange?style=flat-square&logo=swift&logoColor=white)
 
-Native macOS/iOS platform for running agents side-by-side. `@mention` any agent to route work; up to 4 stream concurrently. Brain/Hand/Loop architecture, 8 LLM providers behind one protocol, 16 built-in tools, MCP bridge to external systems. Memory plugs into Sovereign Memory.
+Native macOS/iOS platform for running agents side-by-side. `@mention` any agent to route work; up to 4 stream concurrently. Brain/Hand/Loop architecture, 8 LLM providers behind one protocol, 16 built-in tools, MCP bridge to external systems. Memory plugs into Minni.
 
 [→ infektyd/llmHub](https://github.com/infektyd/llmHub)
 
@@ -91,6 +93,7 @@ A paired runtime + harness — Swift agent framework plus the Python eval framew
 
 | Project | What it does |
 |:--|:--|
+| 🔩 &nbsp; [**AetherKernel**](https://github.com/infektyd/AetherKernel) | Bare-metal Embedded Swift kernel for a Raspberry Pi 4 — async/await and a custom `SerialExecutor` on real hardware, no OS underneath. Started as a palate cleanser and a live proving ground for Minni-coordinated agents; surfaced [swiftlang/swift#89835](https://github.com/swiftlang/swift/issues/89835) upstream. |
 | ⚙️ &nbsp; [**Binary-Forge**](https://github.com/infektyd/Binary-Forge) | Hand-forged x86-64 Linux ELF binaries. No compiler. No libc. Just raw ELF, direct syscalls, and machine code elegance. |
 
 <br>
