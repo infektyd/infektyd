@@ -12,7 +12,7 @@ Multi-agent systems that run on your hardware, stay inspectable, and don't depen
 
 > *"Identity loads whole. Knowledge loads chunked."*
 
-**Currently:** evolving Minni · building Praxis · iterating on llmHub
+**Currently:** Minni.
 
 </div>
 
@@ -22,14 +22,12 @@ Multi-agent systems that run on your hardware, stay inspectable, and don't depen
 
 ## Now
 
-<table>
-<tr>
-<td width="50%" valign="top">
-
 ### 🧠 &nbsp; Minni
-![status](https://img.shields.io/badge/public-2ea44f?style=flat-square) ![ver](https://img.shields.io/badge/evolving-1f6feb?style=flat-square)
+![status](https://img.shields.io/badge/public-2ea44f?style=flat-square) ![focus](https://img.shields.io/badge/current%20focus-orange?style=flat-square) ![ver](https://img.shields.io/badge/evolving-1f6feb?style=flat-square)
 
-*(formerly Sovereign Memory)* — local-first memory **and governance** for AI agents. Per-agent vaults with review-first learning: writes are *proposed*, pass a quality gate and operator review, then become durable. Cross-agent handoffs carry identity, principal, and context; everything is audited.
+*(formerly Sovereign Memory)* — local-first memory **and governance** for AI agents, evolving in the open.
+
+Per-agent vaults with review-first learning: writes are *proposed*, pass a quality gate and operator review, then become durable. Cross-agent handoffs carry identity, principal, and context. Every read and write is audited. Session hooks feed the same memory spine to Claude Code, Codex, Gemini, and Grok — different agents, one shared, inspectable history.
 
 **Shipping now: `minni:plan`** — plans as durable artifacts, not session todo-lists. They survive crash and compaction, one agent's plan is executable by another (Claude writes, Codex runs, both observable), and steps close on an *evidence gate*: not "the agent said done," but the proof passed — test output, serial markers off real hardware.
 
@@ -37,33 +35,17 @@ SQLite/WAL is runtime truth · FAISS handles vector recall · native Apple Found
 
 [→ infektyd/minni](https://github.com/infektyd/minni)
 
-</td>
-<td width="50%" valign="top">
+<br>
 
-### 🛠 &nbsp; Praxis
-![status](https://img.shields.io/badge/private-grey?style=flat-square) ![focus](https://img.shields.io/badge/current%20focus-orange?style=flat-square)
+---
 
-Local-first IDE for macOS. Headless `praxisd` Swift daemon over JSON-RPC is the primary surface; the SwiftUI shell is an optional human view. 7+ LLM providers, 14 tools gated by an authorization layer, **243+ tests passing**.
+## Range
 
-Optional Compose Multiplatform thin client.
-
-*(going public when stable)*
-
-</td>
-</tr>
-<tr>
-<td colspan="2" valign="top">
-
-### 🧬 &nbsp; llmHub
-![status](https://img.shields.io/badge/public-2ea44f?style=flat-square) ![lang](https://img.shields.io/badge/Swift%206-orange?style=flat-square&logo=swift&logoColor=white)
-
-Native macOS/iOS platform for running agents side-by-side. `@mention` any agent to route work; up to 4 stream concurrently. Brain/Hand/Loop architecture, 8 LLM providers behind one protocol, 16 built-in tools, MCP bridge to external systems. Memory plugs into Minni.
-
-[→ infektyd/llmHub](https://github.com/infektyd/llmHub)
-
-</td>
-</tr>
-</table>
+| Project | What it does |
+|:--|:--|
+| 🔩 &nbsp; [**AetherKernel**](https://github.com/infektyd/AetherKernel) | Bare-metal Embedded Swift kernel for a Raspberry Pi 4 — async/await and a custom `SerialExecutor` on real hardware, no OS underneath. Started as a palate cleanser and became the live proving ground for Minni-coordinated agent fleets; surfaced [swiftlang/swift#89835](https://github.com/swiftlang/swift/issues/89835) upstream. |
+| ⚙️ &nbsp; [**Binary-Forge**](https://github.com/infektyd/Binary-Forge) | Hand-forged x86-64 Linux ELF binaries. No compiler. No libc. Just raw ELF, direct syscalls, and machine code elegance. |
+| 🧬 &nbsp; [**llmHub**](https://github.com/infektyd/llmHub) | Shipped and resting. Native macOS/iOS platform for running agents side-by-side — `@mention` routing, 4 concurrent streams, 8 LLM providers behind one protocol, MCP bridge. Its memory layer became part of what Minni is now. |
 
 <br>
 
@@ -84,17 +66,6 @@ A paired runtime + harness — Swift agent framework plus the Python eval framew
 - [`Syntra-Ethics-Dataset`](https://huggingface.co/datasets/Infektyd/Syntra-Ethics-Dataset) — 177 tri-brain dilemma prompts across `valon_ethics`, `modi_logic`, `drift_resilience`, and `coherence_structures` suites.
 - [`syntra-testing-evals-v4`](https://huggingface.co/datasets/Infektyd/syntra-testing-evals-v4) — full benchmark suite (CMT + ARC + GSM8K) with grading tools and sample runs.
 - [`council-transcripts`](https://huggingface.co/datasets/Infektyd/council-transcripts) — multi-agent deliberation sessions across Workhorse / Creative / Speed personas, synthesized by a Conductor.
-
-<br>
-
----
-
-## Range
-
-| Project | What it does |
-|:--|:--|
-| 🔩 &nbsp; [**AetherKernel**](https://github.com/infektyd/AetherKernel) | Bare-metal Embedded Swift kernel for a Raspberry Pi 4 — async/await and a custom `SerialExecutor` on real hardware, no OS underneath. Started as a palate cleanser and a live proving ground for Minni-coordinated agents; surfaced [swiftlang/swift#89835](https://github.com/swiftlang/swift/issues/89835) upstream. |
-| ⚙️ &nbsp; [**Binary-Forge**](https://github.com/infektyd/Binary-Forge) | Hand-forged x86-64 Linux ELF binaries. No compiler. No libc. Just raw ELF, direct syscalls, and machine code elegance. |
 
 <br>
 
